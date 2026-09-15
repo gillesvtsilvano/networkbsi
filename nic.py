@@ -11,17 +11,17 @@ class NIC:
 		if cable:
 			self.connectCable(cable)
 
-	def connectCable(self, cable):
+	def connect_cable(self, cable):
 		self.cable = cable
 		self.cable.connect()
 
-	def disconnectCable(self):
+	def disconnect_cable(self):
 		self.cable.disconnect()
 		self.cable = None
 
-	def sendFrame(self, datagram):
+	def send_frame(self, datagram):
 		self.cable.writeBuffer(datagram)
 
-	def recvFrame(self):
+	def recv_frame(self):
 		return self.cable.readBuffer()
 		
