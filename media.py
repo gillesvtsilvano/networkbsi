@@ -7,18 +7,18 @@ class Cable:
 		self.buffer = ''
 		self.available = True
 
-	def readBuffer(self):
+	def read_buffer(self):
 		self.available = True
 		return self.buffer
 
-	def writeBuffer(self, frame):
+	def write_buffer(self, frame):
 		if not self.available:
 			raise ColisionError
 		else:
 			self.buffer = frame
 			self.available = False
 
-	def isAvailable(self):
+	def is_available(self):
 		return self.available
 
 	def connect(self):
